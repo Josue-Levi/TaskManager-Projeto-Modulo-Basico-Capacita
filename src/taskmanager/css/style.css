@@ -1,0 +1,9 @@
+.button {
+    -fx-cursor: hand;
+}
+
+.button:hover {
+    -fx-opacity: 0.8;
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
+}

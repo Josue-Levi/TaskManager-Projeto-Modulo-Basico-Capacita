@@ -31,6 +31,6 @@ Um sistema interativo de gerenciamento de tarefas via console, desenvolvido em J
    git clone [https://github.com/Josue-Levi/TaskManager-Projeto-Modulo-Basico-Capacita.git]
    
    Inicialize o projeto na sua IDE de preferência (recomendado o IntelliJ IDEA). 
-2. Localize o arquivo principal de execução no seguinte caminho: src/taskmanager/app/Main.java
+2. Localize o arquivo principal de execução no seguinte caminho: src/taskmanager/app/Launcher.java
 
-3. Execute a classe principal (No IntelliJ, abra a classe Main e clique no botão ▶️ verde ou pressione Shift + F10).
+3. Não execute a classe MainApplication  . Clique com o botão direito na classe Launcher e selecione "Run". A base de dados será criada automaticamente na primeira execução.

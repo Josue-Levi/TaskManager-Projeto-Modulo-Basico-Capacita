@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="taskmanager.controller.MainController">
+    <top>
+        <VBox alignment="CENTER" spacing="10">
+            <padding>
+                <Insets top="20" right="20" bottom="10" left="20"/>
+            </padding>
+            <Label text="Gerenciador de Tarefas" style="-fx-font-size: 24px; -fx-font-weight: bold;"/>
+        </VBox>
+    </top>
+
+    <center>
+        <VBox spacing="10">
+            <padding>
+                <Insets right="20" left="20"/>
+            </padding>
+            <TableView fx:id="tabelaTarefas" VBox.vgrow="ALWAYS">
+                <columns>
+                    <TableColumn fx:id="colunaId" text="ID" prefWidth="50"/>
+                    <TableColumn fx:id="colunaTitulo" text="Título" prefWidth="200"/>
+                    <TableColumn fx:id="colunaDescricao" text="Descrição" prefWidth="250"/>
+                    <TableColumn fx:id="colunaStatus" text="Status" prefWidth="100"/>
+                </columns>
+            </TableView>
+        </VBox>
+    </center>
+
+    <bottom>
+        <HBox spacing="15" alignment="CENTER">
+            <padding>
+                <Insets top="20" right="20" bottom="20" left="20"/>
+            </padding>
+            <Button text="Nova Tarefa" onAction="#abrirTelaCadastro"/>
+            <Button text="Concluir Selecionada" onAction="#concluirTarefa"/>
+            <Button text="Remover Selecionada" onAction="#removerTarefa"/>
+        </HBox>
+    </bottom>
+</BorderPane>

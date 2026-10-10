@@ -1,51 +1,48 @@
 package taskmanager.controller;
 
 import java.util.ArrayList;
-
+import java.util.List;
 import taskmanager.exceptions.TarefaNaoEncontradaException;
 import taskmanager.model.Tarefa;
 
-public class TaskManager implements InterfaceGerenciadorTarefas {
+public class TaskManager<T extends Tarefa> implements InterfaceGerenciadorTarefas<T> {
 
-    private ArrayList<Tarefa> tarefas;
+    private List<T> tarefas;
 
     public TaskManager(){
         this.tarefas = new ArrayList<>();
     }
 
-    public void adicionarTarefa(Tarefa tarefa){
+    @Override
+    public void adicionarTarefa(T tarefa){
         tarefas.add(tarefa);
     }
 
+    @Override
     public void listarTarefa(){
         if(tarefas.isEmpty()){
             System.out.println("Nenhuma tarefa cadastrada.");
-        }else {
-            for(Tarefa tarefa : tarefas){
+        } else {
+            for(T tarefa : tarefas){
                 System.out.println(tarefa);
             }
         }
     }
 
+    @Override
     public void removerTarefa(int id){
-        boolean encontrou = false;
-        for (int i = 0; i<tarefas.size(); i++){
-            if(tarefas.get(i).getId() == id){
-                tarefas.remove(i);
-                encontrou = true;
-                break;
-            }
-        }
+        boolean encontrou = tarefas.removeIf(t -> t.getId() == id);
         if(!encontrou){
             throw new TarefaNaoEncontradaException("Tarefa com ID:"+ id +" não foi encontrada.");
         }
     }
 
+    @Override
     public void concluirTarefa(int id){
         boolean encontrou = false;
-        for (int i = 0; i<tarefas.size(); i++){
-            if(tarefas.get(i).getId() == id){
-                tarefas.get(i).setStatus(true);
+        for (T tarefa : tarefas){
+            if(tarefa.getId() == id){
+                tarefa.setStatus(true);
                 encontrou = true;
                 break;
             }
@@ -53,15 +50,10 @@ public class TaskManager implements InterfaceGerenciadorTarefas {
         if(!encontrou){
             throw new TarefaNaoEncontradaException("Tarefa com ID:"+ id +" não foi encontrada.");
         }
-
     }
 
-    public boolean existeID (int id){
-        for (int i = 0; i<tarefas.size(); i++){
-            if(tarefas.get(i).getId() == id){
-                return true;
-            }
-        }
-        return false;
+    @Override
+    public boolean existeID(int id){
+        return tarefas.stream().anyMatch(t -> t.getId() == id);
     }
 }
