@@ -1,6 +1,6 @@
 # 📝 Gerenciador de Tarefas | [Task Manager]
 
-m sistema de gestão de tarefas com interface gráfica, desenvolvido em Java. Este projeto é a evolução do módulo básico, transitando de uma aplicação de consola para um sistema desktop completo com persistência de dados em base de dados, arquitetura robusta e testes automatizados.
+Sistema de gestão de tarefas com interface gráfica, desenvolvido em Java. Este projeto é a evolução do módulo básico, transitando de uma aplicação de consola para um sistema desktop completo com persistência de dados em base de dados, arquitetura robusta e testes automatizados.
 
 ## ✨ Funcionalidades
 
