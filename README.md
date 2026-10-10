@@ -4,24 +4,25 @@ Um sistema interativo de gerenciamento de tarefas via console, desenvolvido em J
 
 ## ✨ Funcionalidades
 
-* **Adicionar Tarefas:** Suporte para criação de tarefas Normais ou Prioritárias.
-* **Listagem:** Visualização de todas as tarefas cadastradas e seus respectivos status formatados na tela.
-* **Conclusão de Tarefa:** Busca inteligente pelo ID para alterar o status da tarefa.
-* **Remoção:** Exclusão rápida e segura de tarefas do sistema.
-* **Validação de Dados:** Prevenção ativa contra IDs duplicados, campos obrigatórios vazios e erros de digitação.
+* **Interface Gráfica (GUI):** Interface intuitiva e amigável construída com JavaFX e FXML.
+* **Persistência de Dados:** As tarefas são guardadas de forma segura numa base de dados relacional local (SQLite).
+* **Gestão Completa:** Adição, listagem em tabela interativa, conclusão e remoção de tarefas com caixas de confirmação.
+* **Arquitetura MVC:** Código estritamente separado em Camada Visual (Views/CSS), Controladores e Modelos/Persistência (DAO).
 
 ## 🛠️ Tecnologias e Conceitos Aplicados
 
-* **Linguagem:** Java(JDK21).
-* **POO:** Encapsulamento, Herança (`Tarefa` -> `TarefaPrioritaria`) e Interfaces (`InterfaceGerenciadorTarefas`).
-* **Estruturas de Dados:** Uso de `ArrayList` para o armazenamento dinâmico em memória.
-* **Segurança e Exceções:** Uso de `do-while`, blocos `try-catch` e criação de exceções customizadas para as regras de negócio (`TarefaNaoEncontradaException`).
-* **Arquitetura:** Código modularizado e dividido nos pacotes `app`, `controller`, `model` e `exceptions`.
+* **Linguagem e Gestão:** Java (JDK 21) e Maven.
+* **Interface Gráfica:** JavaFX (Scene Builder, FXML, CSS).
+* **Persistência (JDBC):** SQLite (dispensa instalação de servidores externos) com uso de `PreparedStatement` para segurança.
+* **Testes Automatizados:** JUnit 5 para validação da lógica de negócio e operações da base de dados.
+* **Estruturas de Código Avançadas:** Utilização de `Generics` (`<T>`) para maior flexibilidade na manipulação das listas de tarefas.
+* **POO:** Encapsulamento, Herança, Interfaces e tratamento de Exceções.
 
 ## 🚀 Como Executar o Projeto
 
 ### Pré-requisitos
-* Ter o **Java JDK** (recomendado versão 21 LTS) instalado em sua máquina.
+* **Java JDK** (versão 21 recomendada).
+* **Maven** (para gestão automática das dependências do JavaFX, SQLite e JUnit).
 * Git instalado.
 
 ### Passo a Passo
